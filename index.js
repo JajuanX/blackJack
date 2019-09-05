@@ -1,4 +1,4 @@
-const readLineSync = require('readLine-sync');
+const readLineSync = require('readline-sync');
 let deck = []
 let suits = ['Hearts❤️', 'Clubs♣️', 'Diamonds💎', 'Spades♠️']
 let cardNumbers = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen','King']
