@@ -12,11 +12,18 @@ let dealerCurrentScore
 let addScore = []
 const [USER, DEALER] = ['user', 'dealer']
 
+// Creates deck of cards using the suits and cardNumbers arrays.
+// We are calling for each on each item in the suits array then using the for loop to push the values of each card into a new array called DECK. This will run soon as the program starts.
+
 suits.forEach(function(suitName){
   for (let i = 0; i < cardNumbers.length; i++) {
     deck.push({number: cardNumbers[i], suit: suitName })
   }
 })
+console.log(deck);
+
+// Here we are taking the deck we just created and passing it as an argument into the newDeck function.
+// We pass in the deck of cards unshuffled and we call the for loop to
 
 function newDeck(deckOfCards){
   for (let i = 0; i < deckOfCards.length; i++) {
@@ -24,8 +31,12 @@ function newDeck(deckOfCards){
     shuffledDeck.push(rand)
   }
 }
+
+// Calls newDeck to shuffle cards
 newDeck(deck)
 
+// ****** Want to see the shuffled deck? Use the console.log below *****
+// console.log(shuffledDeck)
 function dealCard(dealerOrUser){
   if (dealerOrUser == USER) {
     userHand.push(shuffledDeck.pop())
@@ -34,6 +45,8 @@ function dealCard(dealerOrUser){
   }
 }
 
+// Here we are starting the game for the user.
+//
 let userName = readLineSync.question("What's your name?\n").trim()
 console.log(`Lets play BlackJack ${userName}`);
 console.log(`Here are you cards ${userName}`);
